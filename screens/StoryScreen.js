@@ -31,8 +31,8 @@ export default class StoryScreen extends Component {
       speakerColor: "gray",
       speakerIcon: "volume-high-outline",
       light_theme: true,
-      likes: this.props.route.params.story.story.likes,
-      is_liked: false
+      likes: this.props.route.params.likes,
+      is_liked: this.props.route.params.is_liked
     };
   }
 
@@ -53,9 +53,12 @@ export default class StoryScreen extends Component {
       .ref("/users/" + firebase.auth().currentUser.uid)
       .on("value", snapshot => {
         theme = snapshot.val().current_theme;
-        this.setState({ light_theme: theme === "light" });
+        this.setState({ light_theme: theme === "light"});
+
       });
   };
+
+
 
   async initiateTTS(title, author, story, moral) {
     console.log(title);
@@ -74,7 +77,6 @@ export default class StoryScreen extends Component {
   }
 
   likeAction = () => {
-    console.log("here");
     if (this.state.is_liked) {
       firebase
         .database()
