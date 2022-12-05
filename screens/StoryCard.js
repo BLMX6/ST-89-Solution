@@ -90,7 +90,7 @@ export default class StoryCard extends Component {
         <TouchableOpacity
           style={styles.container}
           onPress={() =>
-            this.props.navigation.navigate("StoryScreen", {
+            this.props.navigation.navigate("PantallaDeHistoria", {
               story: story,
               story_id: this.state.story_id,
               is_liked:this.state.is_liked,
