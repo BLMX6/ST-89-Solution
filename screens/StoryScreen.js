@@ -69,7 +69,7 @@ export default class StoryScreen extends Component {
     if (current_color === "gray") {
       Speech.speak(`${title} by ${author}`);
       Speech.speak(story);
-      Speech.speak("The moral of the story is!");
+      Speech.speak("¡La moraleja de la historia es!");
       Speech.speak(moral);
     } else {
       Speech.stop();
@@ -124,7 +124,7 @@ export default class StoryScreen extends Component {
                     : styles.appTitleText
                 }
               >
-                Storytelling App
+                App para contar historias
               </Text>
             </View>
           </View>
@@ -207,7 +207,7 @@ export default class StoryScreen extends Component {
                       : styles.moralText
                   }
                 >
-                  Moral - {this.props.route.params.story.moral}
+                  Moraleja - {this.props.route.params.story.moral}
                 </Text>
               </View>
               <View style={styles.actionContainer}>
